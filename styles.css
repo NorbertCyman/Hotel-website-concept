@@ -1,0 +1,313 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
+/* scrollbar */
+/* width */
+::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgb(78, 78, 78);
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--hl);
+    border-radius: 20px;
+  }
+  
+
+
+:root{
+    --hl: #cc8a27; /* highlight */
+    --logo: #f9bd24;
+}
+
+body{
+    margin: 0;
+    background-color: black;
+    overflow-x: hidden;
+}
+/* Nav-bar */
+.nav-bar{
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: all .5s;
+}
+.nav-bar-out{ /* dodaj czarne tło jak zjedzie sie nizej */
+    background-color: rgba(34, 34, 34);    
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.nav-hidden{
+  transform: translateY(-500px);
+}
+.nav-bar > a{
+    text-decoration: none;
+}
+.buttons{
+    margin-right: 4vw;
+}
+.buttons button{
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px transparent solid;
+    margin-inline: 5px;
+    font-size: 20px;
+    color: var(--hl);
+    transition: all .6s;
+}
+.buttons a:hover button,.buttons a:focus button,.buttons a#active button{
+    cursor: pointer;
+    border-bottom: 2px var(--hl) solid;
+    opacity: .7;
+}
+.logo{
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+}
+.logo h2{
+    color: var(--logo);
+    margin:0;
+    margin-left: 12px;
+    margin-top: 10px;
+    font-size: 35px;
+    font-family: 'Cormorant SC', serif;
+}
+.nav-mobile-opn{
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    top: 30px;
+    right: 30px;
+    background-color: #222;
+    border: var(--hl) 2px solid;
+    padding: 0;
+    z-index: 10;
+}
+@media screen and (max-width: 702px) {
+    .logo div{
+        display: none;
+    }
+    .logo{
+        z-index: 20;
+    }
+}
+@media screen and (max-width: 550px) {
+    
+.nav-mobile-hidden{
+    transform: translateY(-1000px);
+}
+    .mobile-nav{
+        position: fixed;
+        top:0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        transition: transform .2s;
+        background-color: rgba(34, 34, 34, 0.95);
+        z-index: 9;
+    }
+    .buttons{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 100px;
+        text-align: center;
+    }
+    .logo div{
+        display: block;
+    }
+    .nav-mobile-opn{
+        display: block;
+    }
+}
+@media screen and (min-width: 550px) {
+    .nav-mobile-opn{
+        display: none;
+    }
+}
+@media screen and (max-width: 320px) {
+    .logo div{
+        display: none;
+    }
+}
+section>div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Section 1 call to action */
+.section1{
+    color: white;
+    min-height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background: url("cta.jpg");
+    z-index: 1;
+}
+.section1-content{
+    min-height: 100vh;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: rgba(34, 34, 34, 0.7);
+    z-index: 2;
+    height: 100%;
+    flex-direction: column;
+}
+#main{
+    font-size: clamp(40px, 5vw, 60px);
+    margin-top: 70px;
+    color: var(--logo);
+    font-family: 'Cormorant SC', serif;
+}
+h1{
+    font-size: clamp(30px,5vw,50px);
+    margin-inline: 10px;
+    text-align: center;
+}
+p{
+    width: clamp(200px,60vw,700px);
+    text-align: center;
+    font-size: clamp(18px,3vw,25px);
+}
+#cta{
+    background-color: var(--hl);
+    color: white;
+    font-size: 25px;
+    margin-top: 20px;
+    border: 0;
+    padding: 6px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    border-radius: 5px;
+    transition: all .5s;
+}
+#cta:hover{
+    color: #222;
+    cursor: pointer;
+}
+/* Section2 */
+/* tło do zmiany */
+
+.section2-content{
+    padding-top: 20px;
+    flex-direction: column;
+    color: var(--logo);
+    background-color: #222;
+}
+.galeria{
+    margin: 50px;
+    margin-top: 0;
+}
+.section2-content p{
+    color: white;
+    width: 100%;
+    margin: auto;
+    font-size: large;
+}
+.section2-content h1{
+    font-family: 'Cormorant SC', serif;
+}
+.col-text h2{
+    font-size: 28px;
+}
+h2{
+    font-size: 34px;
+    text-align: center;
+    font-family: 'Cormorant SC', serif;
+}
+.galeria p{
+    font-size: clamp(18px,2vw,30px);
+}
+.photo-description{
+    border-left: 2px var(--hl) solid;    
+}
+@media screen and (max-width: 600px) {
+    .galeria{
+        margin: 0;
+    }
+  }
+.col-text{
+    border-left: #cc8a27 1px solid;
+    padding-left: 12px;
+    margin-bottom: 20px;
+    font-size: 19px;
+    height: 120px;
+}
+#carousel{
+    width: 90%;
+    margin-top: 20px;
+}
+.info:hover{
+    transition: all .5s;
+    width: 33%;
+    opacity: .8;
+}
+.info a{
+    text-decoration: none;
+    color: var(--logo);
+}
+@media screen and (max-width: 600px) {
+    .galeria{
+        margin: 20px;
+    }
+    #carousel{
+        margin-bottom: 30px;
+        width: 95%;
+    }
+  }
+
+  /* Karuzela */
+@media screen and (min-width: 1200px) {
+    #carousel{
+        margin-bottom: 30px;
+        width: 60%;
+    }
+  }
+.podpis{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(34, 34, 34, 0.548);
+    width: 100%;
+    padding-bottom: 50px;
+    font-size: larger;
+    color: white;
+}
+/* contact form */
+.contact1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    color: rgba(255, 255, 255, 0.918);
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    background-image: url("tilesbg.png");
+    background-size: cover;
+}
+.contact1 h2{
+    color: #cc8a27;
+}
+.contact1 input{
+    border: 1px solid var(--hl) ;
+    background-color: #222;
+    color: white;
+}
+.contact1 input:focus-within{
+    outline: 1px solid var(--hl);
+}

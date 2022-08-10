@@ -1,0 +1,35 @@
+:root{
+    --hl: #cc8a27; /* highlight */
+    --logo: #f9bd24;
+}
+body{
+    background-color: #222;
+}
+.about1{
+    width: 100%;
+    height: 40vh;
+    background-image: url(about.jpg);
+    background-size: cover;
+}
+.about1-content{
+    font-size: 50px;
+    color: rgb(179, 179, 179);
+    background-color: rgba(34, 34, 34, 0.705);
+    height: 100%;
+}
+h2{
+    color: var(--hl);
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    text-align: center;
+    margin: 50px;
+}
+.about2{
+    padding-top: 50px;
+    margin-inline: 17vw;
+}
+.about2-content{
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
